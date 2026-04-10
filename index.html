@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pine Admissions</title>
+
+<style>
+/* COLORS */
+:root {
+    --bg: #f8f5f0;
+    --brown: #5c4033;
+    --green: #3a7d44;
+    --text: #2b2b2b;
+}
+
+/* GLOBAL */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 40px;
+    background: var(--bg);
+    position: sticky;
+    top: 0;
+}
+
+nav h2 {
+    color: var(--brown);
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--brown);
+    margin-left: 20px;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    color: var(--brown);
+}
+
+.hero p {
+    max-width: 500px;
+    margin: auto;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    background: var(--green);
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* SECTIONS */
+.section {
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* CARDS */
+.cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 1 1 250px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* FADE-IN ANIMATION */
+.hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: var(--brown);
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <h2>Pine Admissions</h2>
+    <div>
+        <a href="#">Home</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </div>
+</nav>
+
+<section class="hero hidden">
+    <h1>Your Path to US Universities</h1>
+    <p>We help students secure admissions into top US universities with expert guidance.</p>
+    <a href="#" class="btn">Get Started</a>
+</section>
+
+<section class="section hidden">
+    <h2>Our Services</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>University Selection</h3>
+            <p>Find the best-fit universities for your profile.</p>
+        </div>
+        <div class="card">
+            <h3>Application Help</h3>
+            <p>We guide you through every step of your application.</p>
+        </div>
+        <div class="card">
+            <h3>Essay Review</h3>
+            <p>Craft strong personal statements that stand out.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section hidden">
+    <h2>Why Choose Us</h2>
+    <p>We provide personalized counseling to maximize your chances of getting into top universities.</p>
+</section>
+
+<section class="section hidden">
+    <h2>Contact</h2>
+    <p>Email: info@pineadmissions.com</p>
+    <p>WhatsApp: +92-XXX-XXXXXXX</p>
+</section>
+
+<footer>
+    <p>© 2026 Pine Admissions</p>
+</footer>
+
+<script>
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+    });
+});
+
+document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
