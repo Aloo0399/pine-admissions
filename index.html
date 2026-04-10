@@ -1,50 +1,51 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Pine Admissions helps students get into top US universities with expert guidance.">
 <title>Pine Admissions</title>
 
 <style>
-/* COLORS */
 :root {
-    --bg: #f7f3ec;        /* off-white */
-    --brown: #5a3e2b;     /* premium brown */
-    --green: #2f7d4a;     /* CTA green */
+    --bg: #f7f3ec;
+    --brown: #5a3e2b;
+    --green: #2f7d4a;
     --text: #2b2b2b;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
     margin: 0;
-    font-family: "Arial", sans-serif;
+    font-family: Arial, sans-serif;
     background: var(--bg);
     color: var(--text);
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
-/* NAV */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 60px;
+    position: sticky;
+    top: 0;
     background: var(--bg);
 }
 
 nav h2 {
     color: var(--brown);
-    font-size: 22px;
-    letter-spacing: 1px;
 }
 
 nav a {
     text-decoration: none;
     color: var(--brown);
     margin-left: 25px;
-    font-weight: 500;
 }
 
-/* HERO */
 .hero {
     text-align: center;
     padding: 120px 20px 80px;
@@ -53,17 +54,13 @@ nav a {
 .hero h1 {
     font-size: 3rem;
     color: var(--brown);
-    margin-bottom: 10px;
 }
 
 .hero p {
     max-width: 600px;
     margin: auto;
-    font-size: 1.1rem;
-    color: #444;
 }
 
-/* BUTTON */
 .btn {
     display: inline-block;
     margin-top: 25px;
@@ -73,6 +70,7 @@ nav a {
     text-decoration: none;
     border-radius: 6px;
     transition: 0.3s;
+    cursor: pointer;
 }
 
 .btn:hover {
@@ -80,7 +78,6 @@ nav a {
     opacity: 0.9;
 }
 
-/* SECTIONS */
 .section {
     padding: 80px 20px;
     max-width: 1100px;
@@ -89,11 +86,8 @@ nav a {
 
 .section h2 {
     color: var(--brown);
-    font-size: 2rem;
-    margin-bottom: 20px;
 }
 
-/* CARDS */
 .cards {
     display: flex;
     gap: 25px;
@@ -106,9 +100,14 @@ nav a {
     padding: 25px;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    transition: 0.3s;
 }
 
-/* ANIMATION (keep same JS) */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+}
+
 .hidden {
     opacity: 0;
     transform: translateY(25px);
@@ -120,18 +119,25 @@ nav a {
     transform: translateY(0);
 }
 
-/* FOOTER */
 footer {
     text-align: center;
     padding: 40px;
     color: var(--brown);
 }
 
-/* MOBILE */
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
         padding: 20px;
+    }
+
+    nav div {
+        margin-top: 10px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 10px;
     }
 
     .hero h1 {
@@ -140,111 +146,6 @@ footer {
 
     .cards {
         flex-direction: column;
-    }
-}
-/* GLOBAL */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-}
-
-/* NAVBAR */
-nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 40px;
-    background: var(--bg);
-    position: sticky;
-    top: 0;
-}
-
-nav h2 {
-    color: var(--brown);
-}
-
-nav a {
-    text-decoration: none;
-    color: var(--brown);
-    margin-left: 20px;
-}
-
-/* HERO */
-.hero {
-    text-align: center;
-    padding: 80px 20px;
-}
-
-.hero h1 {
-    font-size: 2.5rem;
-    color: var(--brown);
-}
-
-.hero p {
-    max-width: 500px;
-    margin: auto;
-}
-
-.btn {
-    display: inline-block;
-    margin-top: 20px;
-    background: var(--green);
-    color: white;
-    padding: 12px 25px;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-/* SECTIONS */
-.section {
-    padding: 60px 20px;
-    max-width: 1000px;
-    margin: auto;
-}
-
-/* CARDS */
-.cards {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.card {
-    flex: 1 1 250px;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-/* FADE-IN ANIMATION */
-.hidden {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease;
-}
-
-.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 20px;
-    color: var(--brown);
-}
-
-/* MOBILE */
-@media (max-width: 600px) {
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    nav {
-        flex-direction: column;
-        text-align: center;
     }
 }
 </style>
@@ -256,18 +157,18 @@ footer {
     <h2>Pine Admissions</h2>
     <div>
         <a href="#">Home</a>
-        <a href="#">Services</a>
-        <a href="#">Contact</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
     </div>
 </nav>
 
 <section class="hero hidden">
     <h1>Your Path to US Universities</h1>
     <p>We help students secure admissions into top US universities with expert guidance.</p>
-    <a href="#" class="btn">Get Started</a>
+    <a href="#contact" class="btn">Get Started</a>
 </section>
 
-<section class="section hidden">
+<section id="services" class="section hidden">
     <h2>Our Services</h2>
     <div class="cards">
         <div class="card">
@@ -290,7 +191,7 @@ footer {
     <p>We provide personalized counseling to maximize your chances of getting into top universities.</p>
 </section>
 
-<section class="section hidden">
+<section id="contact" class="section hidden">
     <h2>Contact</h2>
     <p>Email: info@pineadmissions.com</p>
     <p>WhatsApp: +92-XXX-XXXXXXX</p>
@@ -305,6 +206,7 @@ const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add("show");
+            observer.unobserve(entry.target);
         }
     });
 });
@@ -314,3 +216,4 @@ document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
 
 </body>
 </html>
+
